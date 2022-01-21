@@ -1,6 +1,6 @@
 # Repósitorio referente a matéria de Estruturas de Dados da UnB
 
-Mini Guia de Estilo Para Python
+<h1>Mini Guia de Estilo Para Python</h1>
 Recuo, comprimento de linha e quebra de código
 Sempre use 4 espaços para recuo (não use tabulações)
 Use UTF-8 para programar em Python 3
