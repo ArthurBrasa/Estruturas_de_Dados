@@ -21,6 +21,8 @@ def eh_gemeo(p1, tupla=False):
 def eh_primo(num):
     if num == 2 or num == 3 or num == 5:
         return True
+    elif num%2==0:
+        return False
     else:
         for n in range(2, num):
             if num%n == 0:
@@ -39,4 +41,6 @@ def primos_gemeos(value):
                 numeros_primos.append(eh_gemeo(cont, True))
     return numeros_primos
 
-print(primos_gemeos(80))
+#print(eh_primo(401524123412341))
+#print(primos_gemeos(800))
+print(len(primos_gemeos(800)))

@@ -11,10 +11,8 @@ def distancia(point_1, point_2):
 def holes():
     posicao = {}
     holes = int(input())
-    rabbit = input().split()
-    posicao['rabbit'] = format_xy(rabbit)
-    fox = input().split()
-    posicao['fox'] = format_xy(fox)
+    posicao['rabbit'] = format_xy(input().split())
+    posicao['fox'] = format_xy(input().split())
     lista = []
     while holes>0:
         lista.append(format_xy(input().split()))
