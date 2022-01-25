@@ -1,23 +1,21 @@
 
-total = int(input())
-string = input()
-lista = []
-for c in string:
-    lista.append(c)
+def invert_string(text):
+    return text[::-1]
 
-for c in lista:
-    if c == '0':
-        lista.pop(0)
-    else:
-        lista.pop(0)
-        break
+def remover_0_laterais(text):
+    text = text[text.find('1'):]
+    text = invert_string(text)
+    return invert_string(text[text.find('1'):])
 
-lista.reverse()
-for c in lista:
-    if c == '0':
-        lista.pop(0)
-    else:
-        lista.pop(0)
-        break
+def cont_zeros(text):
+    if len(text) == 1:
+        return 0
+    return text.count('0')
 
-print(lista)
+
+n = int(input())
+while n > 0:
+    texto = input()
+    texto = cont_zeros(remover_0_laterais(texto))
+    print(texto)
+    n -= 1
