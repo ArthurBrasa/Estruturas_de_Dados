@@ -8,29 +8,25 @@ class Stack():
         self.items.append(item)
     
     def pop(self):
-        return self.items.pop()
+        try:
+            return self.items.pop()
+        except IndexError:
+            return None
     
     def isEmpty(self):
         return self.items == []
     
     def peek(self):
-        return self.items[len(self.items) - 1]
-    
+        try:
+            return self.items[len(self.items) - 1]
+        except IndexError:
+            return None
+        
     def size(self):
         return len(self.items)
 
 
-# exemplo de uso
 
-myStack = Stack()
-
-print(myStack.isEmpty())
-myStack.push('Hamburguer')
-myStack.push('Juice')
-myStack.push('Milk Shake')
-print(myStack.size())
-print(myStack.pop())
-print(myStack.peek())
 
 # EXEMPLO PRATICO 1 RETIRADO DO LIVRO "Resolução de Problemas com Algoritmos e Estruturas de Dados usando Python"
 # from pythonds.basic.stack import Stack
@@ -56,8 +52,6 @@ def parChecker(symbolString):
     else:
         return False
 
-print(parChecker('((()))'))
-print(parChecker('(()'))
 
 
 """ Exemplo Pratico 2"""
@@ -88,8 +82,6 @@ def matches(open,close):
     return opens.index(open) == closers.index(close)
 
 
-print(parChecker('{{([][])}()}'))
-print(parChecker('[{()]'))
 
 """Exemplo pratco 3"""
 
@@ -107,7 +99,7 @@ def divideBy2(decNumber):
 
     return binString
 
-print(divideBy2(42))
+# print(divideBy2(42))
 
 """Exemplo pratco 4"""
 
@@ -127,8 +119,27 @@ def baseConverter(decNumber,base):
 
     return newString
 
-print(baseConverter(15,2))
-print(baseConverter(15,16))
-print(baseConverter(25, 8))
-print(baseConverter(256, 16))
-print(baseConverter(26, 26))
+
+
+if __name__ == "__main__":
+    myStack = Stack()
+    print(myStack.isEmpty())
+    myStack.push('Hamburguer')
+    myStack.push('Juice')
+    myStack.push('Milk Shake')
+    print(myStack.size())
+    print(myStack.pop())
+    print(myStack.peek())
+    
+    print(parChecker('((()))'))
+    print(parChecker('(()'))  
+    
+    print(parChecker('{{([][])}()}'))
+    print(parChecker('[{()]'))
+
+
+    print(baseConverter(15,2))
+    print(baseConverter(15,16))
+    print(baseConverter(25, 8))
+    print(baseConverter(256, 16))
+    print(baseConverter(26, 26))
