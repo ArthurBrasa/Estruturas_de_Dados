@@ -20,7 +20,7 @@ class Queue:
         try:
             return self.items.pop()
         except:
-            pass 
+            return None
     
     def peek(self):
         try:

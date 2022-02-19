@@ -3,14 +3,14 @@ import time
 num_testes = 5
 media = 0
 
-for _ in range(num_testes):
-    inicio = time.time()
-    soma_ate(10000)
-    fim = time.time()
+# for _ in range(num_testes):
+#     inicio = time.time()
+#     soma_ate(10000)
+#     fim = time.time()
     
-    tempo_de_execucao = fim - inicio
-    media += tempo_de_execucao
-    print(f'Tempo: {tempo_de_execucao}')
+#     tempo_de_execucao = fim - inicio
+#     media += tempo_de_execucao
+#     print(f'Tempo: {tempo_de_execucao}')
 
 media /= num_testes
 print(f'Média de tempo: {media}')

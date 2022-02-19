@@ -13,7 +13,7 @@ class Stack():
         try:
             return self.items.pop()
         except IndexError:
-            return (0, 0)
+            return None
     
     def isEmpty(self):
         return self.items == []

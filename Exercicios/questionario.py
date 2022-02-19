@@ -1,6 +1,5 @@
 from time import sleep
 
-
 """ Prevenção de Erros """
 
 # s = Stack() 
@@ -52,16 +51,16 @@ from time import sleep
 #     print(numeros.pop())
 
 """ Prioridades"""
-string = input().split()
-num = int(input())
+# string = input().split()
+# num = int(input())
 
-atividades = Queue()
-peso = Queue()
-for i in string:
-    if i.isalpha():
-        atividades.enqueue(i)
-    else:
-        peso.enqueue(int(i))
+# atividades = Queue()
+# peso = Queue()
+# for i in string:
+#     if i.isalpha():
+#         atividades.enqueue(i)
+#     else:
+#         peso.enqueue(int(i))
 
 # filaPrioridades = Queue()
 # auxQueue = Queue()
@@ -102,45 +101,41 @@ for i in string:
 #     print(f'Atividade: {aux[0]}, Prioridade: #{aux[1]}')
 
 
-class NewFila(Queue):
-    def __init__(self, chave=Queue(), valor=Queue()):
-        self.chave = chave
-        self.valor = valor
-        self.prioridades = Queue()
+# class NewFila(Queue):
+#     def __init__(self, chave=Queue(), valor=Queue()):
+#         self.chave = chave
+#         self.valor = valor
+#         self.prioridades = Queue()
 
-    def setValor(self, item):
-        self.prioridades.enqueue(item)
+#     def setValor(self, item):
+#         self.prioridades.enqueue(item)
     
-    def getChave(self):
-        return self.chave.getItems()
+#     def getChave(self):
+#         return self.chave.getItems()
 
-    def getValor(self):
-        return self.valor.getItems()
+#     def getValor(self):
+#         return self.valor.getItems()
 
-    def priorit(self):
-        atividade = self.getValor()
-        peso = self.getChave()
-        atividade.reverse()
-        peso.reverse()
+#     def priorit(self):
+#         atividade = self.getValor()
+#         peso = self.getChave()
+#         atividade.reverse()
+#         peso.reverse()
 
-        while len(peso)>0:
-            maiorPrioridade = peso.index(min(peso))
-            self.setValor((atividade.pop(maiorPrioridade), peso.pop(maiorPrioridade)))
+#         while len(peso)>0:
+#             maiorPrioridade = peso.index(min(peso))
+#             self.setValor((atividade.pop(maiorPrioridade), peso.pop(maiorPrioridade)))
 
-        return self.prioridades
-    
-            
-
+#         return self.prioridades
     
     
+# filaPrioridades = NewFila(peso, atividades)
 
-filaPrioridades = NewFila(peso, atividades)
+# while num > 0:
+#     filaPrioridades.priorit().dequeue()
+#     num -= 1
 
-while num > 0:
-    filaPrioridades.priorit().dequeue()
-    num -= 1
-
-print(f'Tamanho da fila: {filaPrioridades.priorit().size()}')
-while not filaPrioridades.priorit().isEmpty():
-    aux = filaPrioridades.priorit().dequeue()
-    print(f'Atividade: {aux[0]}, Prioridade: #{aux[1]}')
+# print(f'Tamanho da fila: {filaPrioridades.priorit().size()}')
+# while not filaPrioridades.priorit().isEmpty():
+#     aux = filaPrioridades.priorit().dequeue()
+#     print(f'Atividade: {aux[0]}, Prioridade: #{aux[1]}')
