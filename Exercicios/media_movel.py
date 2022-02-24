@@ -42,14 +42,31 @@ def mostraFila(fila, string):
 
         f.enqueue(idade)
 
+
 def especial(fila):
-    filaEspecial = Queue()
+    novaFila = []
     aux = Queue(fila)
     for i in range(0, aux.size()):
         idade = aux.dequeue()
         if idade >= 60:
-            filaEspecial.enqueue((idade, i+1))
-    return filaEspecial
+            novaFila.append((idade, i+1))
+    return novaFila[::-1]
+
+
+def atualizarGeral(fila):
+    novaFila = Queue()
+    for i in range(0, fila.size()):
+        idade = fila.dequeue()
+        if idade < 60:
+            novaFila.enqueue((idade, i+1))
+    return novaFila
+
+
+def resultadoEsperado(lista, string):
+    print(string)
+    for i in range(0, lista.size()):
+        print(f'{i+1} - {lista.dequeue()[1]}')
+
 
 filaOriginal = Queue()
 idade = 0
@@ -59,6 +76,10 @@ while idade!='':
         continue
     filaOriginal.enqueue(int(idade))
 
-mostraFila(filaOriginal, 'Fila geral original')
-filaEspecial = especial(filaOriginal.getItems())
-print()
+mostraFila(filaOriginal, '\nFila geral original')
+filaEspecial = Queue(especial(filaOriginal.getItems()))
+mostraFila(filaEspecial, '\nFila preferencial')
+filaGeralAtualizada = atualizarGeral(filaOriginal)
+mostraFila(filaGeralAtualizada, '\nFila geral atualizada')
+resultadoEsperado(filaEspecial, '\nResultado esperado fila preferencial')
+resultadoEsperado(filaGeralAtualizada, '\nResultado esperado fila geral')
